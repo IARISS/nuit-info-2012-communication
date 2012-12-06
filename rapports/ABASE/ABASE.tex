@@ -68,7 +68,7 @@ Après avoir validé, l'application va chercher et afficher tous les lieux ayant
 \includegraphics[width=.9\textwidth, keepaspectratio=true]{img/test.png}
 
 \espace{}
-L'utilisateur peut ensuite consulter une fiche détaillée d'un lieu l'intéressant. Il y trouvera le nom du lieu, une description,une ou plusieurs images et une carte Google Map.
+L'utilisateur peut ensuite consulter une fiche détaillée d'un lieu l'intéressant. Il y trouvera le nom du lieu, une description, une ou plusieurs images et une carte Google Map.
 
 \espace{}
 \includegraphics[width=.9\textwidth, keepaspectratio=true]{img/test.png}
@@ -81,17 +81,17 @@ Quand l'utilisateur charge la page descriptive d'un lieu, l'application va analy
 
 Ainsi, même si l'utilisateur, en entrant une nouvelle description, n'avait entré que "C'est un des plus beau musée de la ville de Mulhouse" et que les tags \#musée et \#mulhouse existaient déjà; il y aura automatiquement une transformation des mots "musée" et "Mulhouse" en lien lors du chargement de la page descriptive du lieu.
 
-Cela permets au final à l'utilisateur de naviguer facilement entre les différents lieux susceptibles de l'intéresser. Il peut ainsi effectuer une recherche par thème, centre d'intérêt,... .
+Cela permets au final à l'utilisateur de naviguer facilement entre les différents lieux susceptible de l'intéresser. Il peut ainsi effectuer une recherche par thème, centre d'intérêt,... .
 
 \espace{}
-Lors d'une recherche, l'application va trier les mots entrés par l'utilisateur :  si le mot correpond à un tag, alors il sera gardé pour la recherche, les autres seront éliminées (comme la base de données des tags est censé être suffisamment grande, cela permets une recherche assez détaillée). Si malheureusement aucun tag n'est trouvé dans ce que l'utilisateur entre, alors l'application gardera les mots importants, et effectuera directement la recherche sur les descriptions (mais comme la base de données des tags est supposée être suffisamment grande, cela ne devrait que rarement se produire).
+Lors d'une recherche, l'application va trier les mots entrés par l'utilisateur :  si le mot correpond à un tag, alors il sera gardé pour la recherche, les autres seront éliminées (comme la base de données des tags est censé être suffisamment grande, cela permet une recherche assez détaillée). Par exemple, l'utilisateur entre "musée mulhouse", l'application lui retournera tous les lieux contenant les tags \#musée et \#mulhouse. Si malheureusement aucun tag n'est trouvé dans ce que l'utilisateur entre, alors l'application gardera les mots importants, et effectuera directement la recherche sur les descriptions (mais comme la base de données des tags est supposée être suffisamment grande, cela ne devrait se produire que rarement).
 
 \espace{}
 Pour rendre le site fonctionnel, il a bien sur fallu lui fournir au départ quelques lieux et un nuage de tag.
 
 \espace{}
 \section{Conclusion}
-Grâce à son style wiki, l'application va s'auto-enrichir, et l'utilisation des tags permet de créer des connections entre les différents lieux ayant des points en communs, que ce soit un lieu, une date, un thème,... le tout dans le but de fournir à l'utilisateur un système de recherche performant, rapide et pratique.
+Grâce à son style wiki, l'application va s'auto-enrichir, et l'utilisation des tags permet de créer des connexions entre les différents lieux ayant des points en communs, que ce soit une ville, une date, un thème,... le tout dans le but de fournir à l'utilisateur un système de recherche performant, rapide et pratique.
 
 %\espace{}
 %\begin{figure}[h]
