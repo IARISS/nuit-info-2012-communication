@@ -55,16 +55,17 @@
 {\sffamily Le but de notre application est de permettre à un utilisateur lambda de trouver, grâce à une recherche rapide et simple, des lieux touristiques et culturels (musées, villages, restaurants,...). L'application fonctionne comme un wiki, donc chaque utilisateur peut rajouter un lieu, avec description et photos. Un système de tag a été mis en place, que nous allons expliqué dans le paragraphe suivant.} 
 
 \espace{}
+\section{Démonstration rapide}
 L'utilisateur arrivant sur le site va trouver une simple barre de recherche. Il devra alors rentrer quelques mots clés en fonction de ce qu'il souhaite trouver (par exemple : "musée mulhouse").
 
 \espace{}
-\includegraphics{img/test.png}
+\includegraphics[width=.9\textwidth, keepaspectratio=true]{img/test.png}
 
 \espace{}
 Après avoir validé, l'application va chercher et afficher tous les lieux ayant comme tag "musée" et "mulhouse".
 
 \espace{}
-\includegraphics{img/test.png}
+\includegraphics[width=.9\textwidth, keepaspectratio=true]{img/test.png}
 
 \espace{}
 L'utilisateur peut ensuite consulter une fiche détaillée d'un lieu l'intéressant. Il y trouvera le nom du lieu, une description,une ou plusieurs images et une carte Google Map.
@@ -73,13 +74,24 @@ L'utilisateur peut ensuite consulter une fiche détaillée d'un lieu l'intéress
 \includegraphics[width=.9\textwidth, keepaspectratio=true]{img/test.png}
 
 \espace{}
-La force de l'application réside dans son système de tag. En effet, lors de la création de la fiche d'un lieu par un utilisateur (ce qui est rendu possible par le fait que l'application est de type wiki), il peut spécifier des mots comme étant des tags dans la description, à l'aide du caractère '\#'. Par exemple : "C'est un des plus beau \#musée de la ville de \#Mulhouse". Aussitôt, l'application va détecter les tags. Deux cas sont alors possible : soit le tag existe déjà (car il a déjà été utilisé dans une autre description), et dans ce cas, l'application va juste transformer ce tag en un lieu vers une page affichant tout les lieux contenant ce tag. Si le tag n'existe pas, alors l'application va le créer et l'ajouter à sa base de données, et générer un lien sur le même principe déjà cité. Par exemple, le tag \#musée donnera un lien vers tous les musées répertoriés sur le site, et le tag \#mulhouse, un lien vers tous les lieux étant situés à Mulhouse.
+\section{Explication détaillée}
+La force de l'application réside dans son système de tag. En effet, lors de la création de la fiche d'un lieu par un utilisateur (ce qui est rendu possible par le fait que l'application est de type wiki), il peut spécifier des mots comme étant des tags dans la description, à l'aide du caractère '\#'. Par exemple : "C'est un des plus beau \#musée de la ville de \#Mulhouse". Aussitôt, l'application va détecter les tags. Deux cas sont alors possible : soit le tag existe déjà (car il a déjà été utilisé dans une autre description), et dans ce cas, l'application va l'ignorer. Si le tag n'existe pas, alors l'application va le créer et l'ajouter à sa base de donnée.
 
-Mais si l'utilisateur à simplement rentré la description suivante (par exemple) : "C'est un des plus beau musée de la ville de Mulhouse" et que le tag \#musée ou \#mulhouse existe déjà, il sera alors détecté et les mots seront automatiquement transformée en lien.
+Quand l'utilisateur charge la page descriptive d'un lieu, l'application va analyser la description, et remplacer tous les mots connus comme étant des tags par des liens vers une page montrant tous les lieux étant également concernés par ce tag. Par exemple, le tag \#musée donnera un lien vers tous les musées répertoriés sur le site, et le tag \#mulhouse, un lien vers tous les lieux étant situés à Mulhouse.
+
+Ainsi, même si l'utilisateur, en entrant une nouvelle description, n'avait entré que "C'est un des plus beau musée de la ville de Mulhouse" et que les tags \#musée et \#mulhouse existaient déjà; il y aura automatiquement une transformation des mots "musée" et "Mulhouse" en lien lors du chargement de la page descriptive du lieu.
 
 Cela permets au final à l'utilisateur de naviguer facilement entre les différents lieux susceptibles de l'intéresser. Il peut ainsi effectuer une recherche par thème, centre d'intérêt,... .
 
-Lors d'une recherche, l'application va trier les mots entrés par l'utilisateur :  si le mot correpond à un tag, alors il sera gardé pour la recherche, les autres seront éliminées (comme la base de données des tags est censé être suffisamment grande, cela permets une recherche assez détaillée). Si malheureusement aucun tag n'est trouvé dans ce que l'utilisateur entre, alors l'application gardera les mots importants, et effectuera directement la recherche sur les descriptions (mais comme la base de données des tag est supposée être suffisamment grande, cela ne devrait que rarement se produire).
+\espace{}
+Lors d'une recherche, l'application va trier les mots entrés par l'utilisateur :  si le mot correpond à un tag, alors il sera gardé pour la recherche, les autres seront éliminées (comme la base de données des tags est censé être suffisamment grande, cela permets une recherche assez détaillée). Si malheureusement aucun tag n'est trouvé dans ce que l'utilisateur entre, alors l'application gardera les mots importants, et effectuera directement la recherche sur les descriptions (mais comme la base de données des tags est supposée être suffisamment grande, cela ne devrait que rarement se produire).
+
+\espace{}
+Pour rendre le site fonctionnel, il a bien sur fallu lui fournir au départ quelques lieux et un nuage de tag.
+
+\espace{}
+\section{Conclusion}
+Grâce à son style wiki, l'application va s'auto-enrichir, et l'utilisation des tags permet de créer des connections entre les différents lieux ayant des points en communs, que ce soit un lieu, une date, un thème,... le tout dans le but de fournir à l'utilisateur un système de recherche performant, rapide et pratique.
 
 %\espace{}
 %\begin{figure}[h]
