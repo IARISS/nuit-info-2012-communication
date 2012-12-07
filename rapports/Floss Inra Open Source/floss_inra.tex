@@ -1,0 +1,114 @@
+\documentclass[12pt, a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+%\usepackage{fourier}
+\usepackage{setspace}
+	\singlespacing
+
+\usepackage[frenchb]{babel}
+\usepackage{xspace}
+\usepackage[margin= 2.5cm]{geometry}
+\pagestyle{plain}
+\renewcommand{\thefootnote}{\fnsymbol{footnote}}
+
+\usepackage{tikz}
+	\usetikzlibrary{shapes}
+\usepackage{graphicx}
+	\graphicspath{{img/}}
+
+\usepackage{varioref}
+	\renewcommand{\reftextbefore}{page précédente}
+	\renewcommand{\reftextfacebefore}{page ci-contre}
+	\renewcommand{\reftextafter}{page suivante}
+	\renewcommand{\reftextfaceafter}{page ci-contre}
+	\renewcommand{\reftextcurrent}{}
+
+\usepackage{amsmath, amsfonts}
+\everymath{\displaystyle}
+
+
+\newcommand{\espace}{\vspace{.8cm}}
+\newcommand{\pg}{
+
+}
+
+%% REMPLIR
+\usepackage[colorlinks=true, allcolors=blue, pdfborder={0 0 0}]{hyperref}
+	\hypersetup{
+		pdftitle={Floss Inra Open Source},
+		pdfsubject={Rapport Floss Inra Open Source},
+		pdfkeywords={Floss Inra Open Source, IARISS, rapport},
+		pdfauthor={IARISS Team}
+	}
+\title{Défi Floss Inra Open Source}
+\newcommand{\authors}{Florent et Nicolas}
+
+%
+\begin{document}
+
+\author{\includegraphics{../_img/iariss_team.png} \\ {\sffamily \href{http://demo.iarissteam.me}{demo.iarissteam.me}}}
+\date{\today}
+
+\maketitle{}
+
+{\sffamily Ce rapport à pour but de détailler les différentes stratégies mise oeuvre par l'équipe IarissTeam lors de la Nuit de l'Info 2012.} 
+
+\espace{}
+Nous avons choisi de développer notre projet selon le modèle de la méthode agile (c'est-à-dire des tâches, une durée pour réaliser chaque tâche, affcter les tâches à des personnes en particulier, \ldots{}). Afin de faciliter la mise en place de cette méthode, nous nous aidons du site \href{http://www.agilezen.com/}{agilezen.com}, un outil gratuit permettant la mise en place de méthode agile.
+
+Nous nous sommes divisés en 3 pôles : une équipe de développement principal (nommée << Master >> chargée du développement des applications ; une équipe de développement secondaire (nommé << Padawan >>) chargée du développement des pages de description de membre, du blog, \ldots{},  et enfin un pôle communication, chargé d'assurer la présence sur les réseaux sociaux, la mise à jour du contenu des différents sites Web mis en place pour la nuit de l'info (le Tumblr (\href{http://lesjoiesdelanuit.tumblr.com/}{Les joies de la Nuit}), le live (\href{http://live.iarissteam.me/}{Live IarissTeam}), le compte à rebours (\href{http://iarissteam.me/}{Compteur IarissTeam}), \ldots{}), ainsi que la rédaction des rapports et, très important la gestion des tâches.
+
+\espace{}
+Le pôle communication est le pivot de l'équipe : c'est lui qui décide d'affecter les tâches, de l'organisation en général. Avant de prendre une décision, on en discute bien évidemment tous ensemble.
+
+Après avoir pris connaissance du sujet, nous avons donc décidé de nous réunir et de discuter ensemble de quoi faire, comment le faire, sous quel forme, \ldots{} (en ce qui concerne le code en lui même, le dernier mot revient logiquement aux équipes de développement). Une fois lancé dans le développement des différents sites web/applications, nous faisons une pause toutes les deux heures afin de faire le point, voir comment chacun avance, si nous sommes dans les temps (ce qu'on appelle, dans le cas de la méthode agile, des << itérations >>).
+
+\begin{center}
+\includegraphics[width=.9\textwidth, keepaspectratio=true]{agile.png}
+\end{center}
+
+\espace
+L'application principale est développée en PHP, et sera déployée sur un serveur Linux. Afin de partager les ressources et le code entre les différents membres de l'équipe nous avons eu recours au programme Git et au site (\href{https://github.com/IARISS}{GitHub/IARISS}). Ces derniers nous permettent de partager facilement les ressources entre nous, tout en les laissant accessibles et en libre consultation. De plus, en cas d'erreurs, nous pouvons toujours revenir à une version précédente, grâce au système de versions des fichiers git.
+
+\espace{}
+Certains membres de l'équipe, développant en local, utilise le système de DropBox afin de partager les ressources entre eux, avant de les synchroniser à l'aide de GitHub pour en faire profiter tous les membres de l'équipe.
+
+Nous utilisons le principe d'intégration continue (\href{http://fr.wikipedia.org/wiki/Int%C3%A9gration_continue}{Wikipédia Intégration Continue}), afin de vérifier que chaque modification du code source n'entraîne pas de régression dans l'application.
+
+Le code source de l'application sera libre, sous licence Creative Common. Nous essayons d'utiliser, notamment pour les images, des ressources libre de droit. Quand elles ne le sont pas, nous précisons alors la provenance de cette ressource (comme sur le Tumblr (lesjoiesdelanuit.tumblr.com), en bas de page).
+
+Nous avons également essayé d'utiliser au maximum des données de \href{http://www.data.gouv.fr/}{data.gouv.fr} pour remplir nos bases de donnée. Ce sont des données publiques (open data), accessibles à tous gratuitement. Nous avons notamment utilisé \href{http://www.data.gouv.fr/donnees/view/Liste-des-offices-de-tourisme-d%27Alsace-564156}{la liste des offices de tourisme d'Alsace} et \href{http://www.data.gouv.fr/donnees/view/Fr%C3%A9quentation-2006-2010-des-mus%C3%A9es-de-France---Alsace-30382306?xtmc=alsace+mus%C3%A9e&xtcr=1}{une liste de musée d'Alsace}.
+
+Concernant le choix des logiciels, nous laissons aux développeurs le choix d'utiliser les outils qu'ils souhaitent (NetBeans, Eclipse, Notepad++, \ldots{})
+
+Au cours de cette nuit, nous avons testé des méthodes de développement d'application déjà éprouvé à mainte reprise. Nous avons pu que constater leur efficacité : les méthodes utilisées se sont parfaitement adaptées au concept de la Nuit de l'Info.
+
+\espace{}
+\section*{Notre application}
+
+
+\espace{}
+\begin{center}
+\includegraphics[width=.9\textwidth, keepaspectratio=true]{img/abase1.png}
+\end{center}
+
+\espace{}
+\section*{Notre adresse postale}
+	
+IARISS
+
+
+ENSISA Lumière
+
+12 rue des Frères Lumière
+
+68093 Mulhouse Cedex
+
+
+\espace\vfill{}
+Ce document a été rédigé en \LaTeX{} par \authors{} pour IarissTeam avec quelques tasses de café et beaucoup de bonne humeur.
+
+Contactez-nous à \href{mailto:nuitinfo@iariss.com}{nuitinfo@iariss.com} pour tout renseignement supplémentaire !
+
+\end{document}
