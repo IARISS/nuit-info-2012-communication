@@ -42,27 +42,27 @@
 		pdfauthor={IARISS Team}
 	}
 \title{Défi ABASE}
-\newcommand{\authors}{Florent}
+\newcommand{\authors}{Florent et Nicolas}
 
 %
 \begin{document}
 
-\author{\includegraphics{../_img/iariss_team.png} \\ {\sffamily \href{http://iarissteam.me}{iarissteam.me}}}
+\author{\includegraphics{../_img/iariss_team.png} \\ {\sffamily \href{http://demo.iarissteam.me}{demo.iarissteam.me}}}
 \date{\today}
 
 \maketitle{}
 
-{\sffamily Le but de notre application est de permettre à un utilisateur lambda de trouver, grâce à une recherche rapide et simple, des lieux touristiques et culturels (musées, villages, restaurants,...). L'application fonctionne comme un wiki, donc chaque utilisateur peut rajouter un lieu, avec description et photos, ou bien modifier un lieu déjà existant (via un lien <<Éditer la fiche>>). Un système de tag a été mis en place, que nous allons expliquer dans le paragraphe suivant.} 
+{\sffamily Le but de notre application est de permettre à un utilisateur lambda de trouver, grâce à une recherche rapide et simple, des lieux touristiques et culturels (musées, villages, restaurants, \ldost{}). L'application fonctionne comme un wiki, donc chaque utilisateur peut ajouter un lieu, avec description et photos, ou bien modifier un lieu déjà existant (via un lien << Éditer la fiche >>). Un système de tag a été mis en place.} 
 
 \espace{}
 \section{Démonstration rapide}
-L'utilisateur arrivant sur le site va trouver une simple barre de recherche. Il devra alors rentrer quelques mots clés en fonction de ce qu'il souhaite trouver (par exemple : \og{}musée mulhouse\fg{}).
+L'utilisateur arrivant sur le site va trouver une simple barre de recherche. Il devra alors rentrer quelques mots clés en fonction de ce qu'il souhaite trouver (par exemple : << musée Mulhouse >>}).
 
 \espace{}
 \includegraphics[width=.9\textwidth, keepaspectratio=true]{img/abase1.png}
 
 \espace{}
-Après avoir validé, l'application va chercher et afficher tous les lieux ayant comme tag \og{}musée\fg{} et \og{}mulhouse\fg{}.
+Après avoir validé, l'application va chercher et afficher tous les lieux ayant comme mot-clef << musée >> et << Mulhouse >>.
 
 \espace{}
 \includegraphics[width=.9\textwidth, keepaspectratio=true]{img/abase2.png}
@@ -75,16 +75,18 @@ L'utilisateur peut ensuite consulter une fiche détaillée d'un lieu l'intéress
 
 \espace{}
 \section{Explication détaillée}
-La force de l'application réside dans son système de tag. En effet, lors de la création de la fiche d'un lieu par un utilisateur (ce qui est rendu possible par le fait que l'application est de type wiki), il peut spécifier des mots comme étant des tags dans la description, à l'aide du caractère '\#'. Par exemple : \og{}C'est un des plus beau \#musée de la ville de \#Mulhouse\fg{}. Aussitôt, l'application va détecter les tags. Deux cas sont alors possible : soit le tag existe déjà (car il a déjà été utilisé dans une autre description), et dans ce cas, l'application va l'ignorer. Si le tag n'existe pas, alors l'application va le créer et l'ajouter à sa base de donnée.
+La force de l'application réside dans son système de tag. En effet, lors de la création de la fiche d'un lieu par un utilisateur (ce qui est rendu possible par le fait que l'application est de type wiki), il peut spécifier des mots comme étant des tags dans la description, à l'aide du caractère '\#'. Par exemple : << C'est un des plus beau \#musée de la ville de \#Mulhouse >>. Aussitôt, l'application va détecter les tags.
 
-Quand l'utilisateur charge la page descriptive d'un lieu, l'application va analyser la description, et remplacer tous les mots connus comme étant des tags par des liens vers une page montrant tous les lieux étant également concernés par ce tag. Par exemple, le tag \#musée donnera un lien vers tous les musées répertoriés sur le site, et le tag \#mulhouse, un lien vers tous les lieux étant situés à Mulhouse.
+Deux cas sont alors possibles : soit le tag existe déjà (car il a déjà été utilisé dans une autre description), et dans ce cas, l'application va l'ignorer. Si le tag n'existe pas, alors l'application va le créer et l'ajouter à sa base de donnée.
 
-Ainsi, même si l'utilisateur, en entrant une nouvelle description, n'avait entré que \og{}C'est un des plus beau musée de la ville de Mulhouse\fg{} et que les tags \#musée et \#mulhouse existaient déjà; il y aura automatiquement une transformation des mots \og{}musée\fg{} et \og{}Mulhouse\fg{} en lien lors du chargement de la page descriptive du lieu.
+Quand l'utilisateur charge la page descriptive d'un lieu, l'application va analyser la description, et remplacer tous les mots connus comme étant des tags par des liens vers une page montrant tous les lieux étant également concernés par ce tag. Par exemple, le tag \#musée donnera un lien vers tous les musées répertoriés sur le site, et le tag \#Mulhouse, un lien vers tous les lieux étant situés à Mulhouse.
 
-Cela permets au final à l'utilisateur de naviguer facilement entre les différents lieux susceptible de l'intéresser. Il peut ainsi effectuer une recherche par thème, centre d'intérêt, \ldots{}
+Ainsi, même si l'utilisateur, en entrant une nouvelle description, n'avait entré que << C'est un des plus beau musée de la ville de Mulhouse >> et que les tags \#musée et \#mulhouse existaient déjà ; il y aura automatiquement une transformation des mots << musée >> et << Mulhouse >> en lien lors du chargement de la page descriptive du lieu.
+
+Cela permet au final à l'utilisateur de naviguer facilement entre les différents lieux susceptible de l'intéresser. Il peut ainsi effectuer une recherche par thème, centre d'intérêt, \ldots{}
 
 \espace{}
-Lors d'une recherche, l'application va trier les mots entrés par l'utilisateur :  si le mot correpond à un tag, alors il sera gardé pour la recherche, les autres seront éliminées (comme la base de données des tags est censé être suffisamment grande, cela permet une recherche assez détaillée). Par exemple, l'utilisateur entre \og{}musée mulhouse\fg{}, l'application lui retournera tous les lieux contenant les tags \#musée et \#mulhouse. Si malheureusement aucun tag n'est trouvé dans ce que l'utilisateur entre, alors l'application gardera les mots importants, et effectuera directement la recherche sur les descriptions (mais comme la base de données des tags est supposée être suffisamment grande, cela ne devrait se produire que rarement).
+Lors d'une recherche, l'application va trier les mots entrés par l'utilisateur : si le mot correspond à un tag, alors il sera gardé pour la recherche, les autres seront éliminées (comme la base de données des tags est censé être suffisamment grande, cela permet une recherche assez détaillée). Par exemple, l'utilisateur entre \og{}musée mulhouse\fg{}, l'application lui retournera tous les lieux contenant les tags \#musée et \#mulhouse. Si malheureusement aucun tag n'est trouvé dans ce que l'utilisateur entre, alors l'application gardera les mots importants, et effectuera directement la recherche sur les descriptions (mais comme la base de données des tags est supposée être suffisamment grande, cela ne devrait se produire que rarement).
 
 \espace{}
 Pour rendre le site fonctionnel, il a bien sur fallu lui fournir au départ quelques lieux et un nuage de tag.

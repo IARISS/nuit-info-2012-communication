@@ -42,17 +42,17 @@
 		pdfauthor={IARISS Team}
 	}
 \title{Défi Arduinnova}
-\newcommand{\authors}{Florent}
+\newcommand{\authors}{Florent, Nicolas}
 
 %
 \begin{document}
 
-\author{\includegraphics{../_img/iariss_team.png} \\ {\sffamily \href{http://iarissteam.me}{iarissteam.me}}}
+\author{\includegraphics{../_img/iariss_team.png} \\ {\sffamily \href{http://demo.iarissteam.me}{demo.iarissteam.me}}}
 \date{\today}
 
 \maketitle{}
 
-{\sffamily Ce rapport a pour but de présenter rapidement la chartre graphique crée pour notre application. Celle-ci utilise un framework CSS(\href{http://twitter.github.com/bootstrap/}{BootStrap Twitter}) qui permet l'utilisation avancée du CSS, du responsive design et le positionnement des éléments;} 
+{\sffamily Ce rapport a pour but de présenter rapidement la chartre graphique créée pour notre site web. Celle-ci utilise un framework CSS (\href{http://twitter.github.com/bootstrap/}{BootStrap Twitter}) qui permet l'utilisation avancée du CSS, du responsive design et le positionnement des éléments en fonction du navigateur et de la plateforme utilisés.} 
 
 \espace{}
 Pour commencer, voici la page d'accueil de notre application : 
@@ -61,7 +61,9 @@ Pour commencer, voici la page d'accueil de notre application :
 \includegraphics[width=.9\textwidth, keepaspectratio=true]{img/accueil.png}
 \end{center}
 \espace{}
-Nous avons pris le parti de faire un design plutôt sobre et épuré : il est constitué d'une image de fond, par dessus laquel est superposé de très légère rayure. Une barre de navigation est attaché en haut de la fenêtre du navigateur, et une barre de recherche est centrée sur la page. Trois onglets sont disponible dans le menu de navigation : un onglet \og{}Recherche\fg{}, un onglet \og{}Cultivez\fg{} et un onglet \og{}Thèmes\fg{}. Ce dernier permets de changer le thème de la page : en effet, plusieurs thèmes sont disponibles dans notre application. Un changement de thème entraîne le changement de l'image de fond de l'application. Ci-après, exemple : 
+Nous avons pris le parti de faire un design plutôt sobre et épuré : il est constitué d'une image de fond, par dessus laquelle est superposée de très légère rayure. La barre de navigation a été placée en haut de la fenêtre du navigateur, et la barre de recherche est centrée sur la page.
+
+Trois onglets sont disponibles dans le menu de navigation : un onglet << Recherche >>, un onglet <<Cultivez >> et un onglet << Thèmes >>. Ce dernier permet de changer le thème de la page : en effet, plusieurs thèmes sont disponibles dans notre site web. Un changement de thème entraîne le changement de l'image de fond de l'application. Ci-après, exemple : 
 \espace{}
 \begin{center}
 \includegraphics[width=.9\textwidth, keepaspectratio=true]{img/accueil3.png}
@@ -70,40 +72,30 @@ Nous avons pris le parti de faire un design plutôt sobre et épuré : il est co
 \end{center}
 
 \espace{}
-Nous allons maintenant nous intéresser à la barre de navigation plus en détails. En plus du menu déroulant permettant de changer le thème du site, nous avons vu qu'il y avait encore deux onglets : \og{}Recherche\fg{} et \og{}Cultivez\fg{}.
-Le premier, \og{}Recherche\fg{}, nous affiche la page d'accueil de l'application, à savoir la barre de recherche qui permet à l'utilisateur d'entrer ces mots clés. Le deuxième, \og{}Cultivez\fg{}, permet à l'utilisateur d'ajouter du contenu sur le site : en effet, cette application étant en parti construit sur le principe d'un wiki, il faut que l'utilisateur puisse ajouter son propre contenu.
-Le site a également été prévu pour s'adapter aux petites résolutions. En effet, le menu s'adapte automatiquement en fonction de la taille de la fenêtre. Voyons ceci plus en détails avec un exemple : dans les images qui suivent, nous avons volontairement réduit la taille de la fenêtre de notre navigateur.
-\espace{}
+Intéressons nous aux deux autres onglets : << Recherche >> et << Cultivez >>.
+Le premier onglet << Recherche >> permet d'afficher la page d'accueil de l'application, à savoir la barre de recherche qui permet à l'utilisateur d'entrer ses mots clés.
+
+Le second, << Cultivez >>, permet à l'utilisateur d'ajouter du contenu sur le site : en effet, cette application étant en parti construit sur le principe d'un wiki, il faut que l'utilisateur puisse ajouter son propre contenu, et aussi l'éditer facilement.
+
+Le site a aussi également été prévu pour s'adapter aux petites résolutions. En effet, le menu s'adapte automatiquement en fonction de la taille de la fenêtre. Voyons ceci plus en détails avec un exemple : dans les images qui suivent, nous avons volontairement réduit la taille de la fenêtre de notre navigateur.
+
 \begin{center}
 \includegraphics[width=.9\textwidth, keepaspectratio=true]{img/accueil4.png}
 \end{center}
-\espace{}
-
-On voit déjà que les trois onglets ont disparu et qu'un autre est apparu. Nous allons maintenant cliquer dessus : 
 
 \espace{}
+On voit déjà que les trois onglets ont disparu et qu'un autre est apparu. En cliquant dessus : 
+
 \begin{center}
 \includegraphics[width=.9\textwidth, keepaspectratio=true]{img/accueil5.png}
 \end{center}
-\espace{}
-
-On s'aperçoit que l'on retrouve ici nos trois onglets. On peut également continuer à changer le thème, comme précédemment : 
 
 \espace{}
-\begin{center}
-\includegraphics[width=.9\textwidth, keepaspectratio=true]{img/accueil6.png}
-\end{center}
+On s'aperçoit que l'on retrouve ici nos trois onglets. On peut également continuer à changer le thème, comme précédemment.
+
 \espace{}
+En outre, nous avons respecté le thème Alsaco-Canadien demandé par l'un des défis : en effet, à l'utilisation du \href{http://fr.wikipedia.org/wiki/Code_Konami}{code Konami} (haut haut bas bas gauche droite gauche droite B A), un \emph{easter egg} se déclenche. En outre, en tapant directement sur la page << je suis un caribou >>, une autre surprise vous attendra.
 
-En outre, nous avons respecté le thème Alsaco-Canadien demandé par l'un des défis : en effet, à l'utilisation du \href{http://fr.wikipedia.org/wiki/Code_Konami}{code Konami} (haut haut bas bas gauche droite gauche droite B A), un easter egg se déclenchera. De même, à l'utilisation de la chaîne de caractère \og{}je suis un caribou\fg{} dans la page, un autre easter egg se déclenchera.
-
-
-%\espace{}
-%\begin{figure}[h]
-%	\begin{center}
-%	\end{center}
-%	\caption{\label{fig-} Légende}
-%\end{figure}
 
 \espace\vfill{}
 Ce document a été rédigé en \LaTeX{} par \authors{} pour IarissTeam avec quelques tasses de café et beaucoup de bonne humeur.
