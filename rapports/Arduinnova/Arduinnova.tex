@@ -1,0 +1,72 @@
+\documentclass[12pt, a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+%\usepackage{fourier}
+\usepackage{setspace}
+	\singlespacing
+
+\usepackage[frenchb]{babel}
+\usepackage{xspace}
+\usepackage[margin= 2.5cm]{geometry}
+\pagestyle{plain}
+\renewcommand{\thefootnote}{\fnsymbol{footnote}}
+
+\usepackage{tikz}
+	\usetikzlibrary{shapes}
+\usepackage{graphicx}
+	\graphicspath{{img/}}
+
+\usepackage{varioref}
+	\renewcommand{\reftextbefore}{page précédente}
+	\renewcommand{\reftextfacebefore}{page ci-contre}
+	\renewcommand{\reftextafter}{page suivante}
+	\renewcommand{\reftextfaceafter}{page ci-contre}
+	\renewcommand{\reftextcurrent}{}
+
+\usepackage{amsmath, amsfonts}
+\everymath{\displaystyle}
+
+
+\newcommand{\espace}{\vspace{.8cm}}
+\newcommand{\pg}{
+
+}
+
+%% REMPLIR
+\usepackage[colorlinks=true, allcolors=blue, pdfborder={0 0 0}]{hyperref}
+	\hypersetup{
+		pdftitle={Arduinnova},
+		pdfsubject={Rapport Arduinnova},
+		pdfkeywords={Arduinnova, IARISS, rapport},
+		pdfauthor={IARISS Team}
+	}
+\title{Défi Arduinnova}
+\newcommand{\authors}{Florent}
+
+%
+\begin{document}
+
+\author{\includegraphics{../_img/iariss_team.png} \\ {\sffamily \href{http://iarissteam.me}{iarissteam.me}}}
+\date{\today}
+
+\maketitle{}
+
+{\sffamily Pmessti de Bischheim vulputate Salut bisamme météor elementum schnaps Heineken risus, Pellentesque merci vielmols semper pellentesque in, porta Kabinetpapier dui nullam sit libero, sed mollis rossbolla eget dolor turpis sit lotto-owe Miss Dahlias auctor, varius chambon ornare kuglopf ante ch'ai aliquam gewurztraminer barapli Gal.} 
+
+\espace{}
+
+
+%\espace{}
+%\begin{figure}[h]
+%	\begin{center}
+%	\end{center}
+%	\caption{\label{fig-} Légende}
+%\end{figure}
+
+\espace\vfill{}
+Ce document a été rédigé en \LaTeX{} par \authors{} pour IarissTeam avec quelques tasses de café et beaucoup de bonne humeur.
+
+Contactez-nous à \href{mailto:nuitinfo@iariss.com}{nuitinfo@iariss.com} pour tout renseignement supplémentaire !
+
+\end{document}
